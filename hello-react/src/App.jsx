@@ -1,11 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    fetch("/data.json")
+      .then(res => res.json())
+      .then(data => setTodos(data));
+  }, []);
+  const addTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
+  }
 
   return (
     <>
