@@ -6,7 +6,7 @@ function ProductForm(props){
         const newProduct = {
             id: Date.now(),
             productName: e.target.querySelector('input').value,
-            category: e.target.querySelector('input[name="category"]').value,
+            category: e.target.querySelector('select[name="category"]').value,
             price: e.target.querySelector('input[name="price"]').value,
             state: "Còn hàng",
         };

@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch("/data.json")
       .then(res => res.json())
-      .then(data => setTodos(data));
+      .then(data => setProducts(data));
   }, []);
   const addProduct = (newProduct) => {
     setProducts([...products, newProduct]);
@@ -32,11 +32,13 @@ function App() {
                 </div>
                 <table border="1">
                     <thead>
-                        <td>STT</td>
-                        <td>TÊN SẢN PHẨM</td>
-                        <td>DANH MỤC</td>
-                        <td>GIÁ</td>
-                        <td>TRẠNG THÁI</td>
+                        <tr>
+                          <th>STT</th>
+                          <th>TÊN SẢN PHẨM</th>
+                          <th>DANH MỤC</th>
+                          <th>GIÁ</th>
+                          <th>TRẠNG THÁI</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
